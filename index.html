@@ -7,28 +7,21 @@
 <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        var pathname = window.location.pathname;
-        // Assuming the URL structure is something like /MyUrl/876445591357
-        var eventId = pathname.split('/')[2]; // Adjust the index based on your actual URL structure
-Alert(eventId);
-        var exampleCallback = function () {
-            console.log('Order complete!');
-        };
+    var exampleCallback = function () {
+        console.log('Order complete!');
+    };
 
-        window.EBWidgets.createWidget({
-            widgetType: 'checkout',
-            eventId: eventId, // Use the dynamically obtained eventId
-            iframeContainerId: 'example-widget-trigger',
-            iframeContainerHeight: 1024,
-            onOrderComplete: exampleCallback,
-        });
+    window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '876445591357',
+        iframeContainerId: 'example-widget-trigger',
+        iframeContainerHeight: 1024,
+        onOrderComplete: exampleCallback,
     });
 </script>
 </head>
 <body >
- <div style="height:1024px" id="example-widget-trigger"></div>
+ <div style="height:100%" id="example-widget-trigger"></div>
+
 </body>
 </html>
-
-
